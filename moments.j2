@@ -14,6 +14,9 @@
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ static('style.css') }}">
+  
+  <!-- Theme Toggle -->
+  <script src="{{ static('theme.js') }}"></script>
 </head>
 <body class="moments">
   <header>
@@ -25,6 +28,7 @@
       <a href="/archive/">Article</a>
       <a href="/moments/">Moments</a>
       <a href="/about/">Me</a>
+      <a href="#" class="theme-toggle" onclick="toggleTheme(event)">☀</a>
     </nav>
   </header>
 

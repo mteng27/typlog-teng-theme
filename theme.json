@@ -10,6 +10,10 @@
     "archive.j2",
     "moments.j2"
   ],
+  "statics": [
+    "style.css",
+    "theme.js"
+  ],
   "options": {
     "colors": {
       "background": "#fff",

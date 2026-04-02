@@ -15,6 +15,9 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ static('style.css') }}">
   
+  <!-- Theme Toggle -->
+  <script src="{{ static('theme.js') }}"></script>
+  
   <!-- Open Graph -->
   <meta property="og:title" content="{{ post.title }}">
   <meta property="og:description" content="{{ post.summary or site.description }}">
@@ -31,6 +34,7 @@
       {% for nav in site.navs %}
       <a href="{{ nav.url }}">{{ nav.title }}</a>
       {% endfor %}
+      <a href="#" class="theme-toggle" onclick="toggleTheme(event)">☀</a>
     </nav>
   </header>
 
