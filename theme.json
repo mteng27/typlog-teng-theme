@@ -1,14 +1,4 @@
 {
-  "id": "teng",
-  "name": "TENG",
-  "version": "1.0.0",
-  "description": "A minimal blog theme inspired by Bear Blog",
-  "author": "TENG",
-  "templates": [
-    "index.j2",
-    "post.j2",
-    "page.j2",
-    "archive.j2",
-    "moments.j2"
-  ]
+  "name": "teng",
+  "templates": ["index.j2", "post.j2", "archive.j2"]
 }
