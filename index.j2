@@ -39,10 +39,10 @@
       {% for nav in site.navs %}
       <a href="{{ nav.url }}">{{ nav.title }}</a>
       {% endfor %}
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <a href="#" class="theme-toggle" onclick="event.preventDefault(); toggleTheme();" aria-label="Toggle dark mode">
         <span class="theme-icon-light">☀</span>
         <span class="theme-icon-dark">☾</span>
-      </button>
+      </a>
     </nav>
   </header>
 
