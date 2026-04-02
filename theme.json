@@ -1,4 +1,6 @@
 {
   "name": "teng",
-  "templates": ["index.j2", "post.j2", "archive.j2"]
+  "author": "TENG",
+  "version": "1.0.0",
+  "tags": ["blog"]
 }
