@@ -17,6 +17,17 @@
   
   <!-- RSS -->
   {% if site.feed %}<link rel="alternate" type="application/rss+xml" href="{{ site.feed }}">{% endif %}
+  
+  <!-- Theme Toggle Script -->
+  <script>
+    // Check saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
 </head>
 <body class="home">
   <header>
@@ -28,6 +39,10 @@
       {% for nav in site.navs %}
       <a href="{{ nav.url }}">{{ nav.title }}</a>
       {% endfor %}
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <span class="theme-icon-light">☀</span>
+        <span class="theme-icon-dark">☾</span>
+      </button>
     </nav>
   </header>
 
@@ -57,5 +72,13 @@
   <footer>
     <p>Crafted with ❤️</p>
   </footer>
+  
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+  </script>
 </body>
 </html>

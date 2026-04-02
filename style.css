@@ -19,6 +19,7 @@
   --code-color: #222;
 }
 
+/* Dark mode - system preference or manual toggle */
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #131517;
@@ -30,6 +31,23 @@
     --code-bg: #1a1a1a;
     --code-color: #ddd;
   }
+}
+
+/* Manual dark mode toggle */
+html.dark {
+  --background-color: #131517;
+  --heading-color: #fff;
+  --text-color: #fff;
+  --link-color: #fff;
+  --visited-color: rgba(255, 255, 255, 0.6);
+  --border-color: #fff;
+  --code-bg: #1a1a1a;
+  --code-color: #ddd;
+}
+
+html.dark a:hover {
+  background: #fff;
+  color: #000 !important;
 }
 
 * {
@@ -426,4 +444,45 @@ footer p {
   font-size: 0.85em;
   color: var(--visited-color);
   opacity: 0.7;
+}
+
+/* ============================================
+   Theme Toggle Button
+   ============================================ */
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+  margin-left: 12px;
+  color: var(--text-color);
+  transition: transform 0.2s;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+  background: none;
+  color: var(--text-color) !important;
+}
+
+.theme-icon-light,
+.theme-icon-dark {
+  display: inline-block;
+}
+
+/* Show/hide icons based on theme */
+html:not(.dark) .theme-icon-dark {
+  display: none;
+}
+
+html.dark .theme-icon-light {
+  display: none;
+}
+
+/* Dark mode specific overrides for moments */
+html.dark .moment-item {
+  border-bottom-color: rgba(255,255,255,0.1);
 }
