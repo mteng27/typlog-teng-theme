@@ -1,6 +1,5 @@
 {
-  "name": "teng",
-  "author": "TENG",
-  "version": "1.0.0",
-  "tags": ["blog"]
+  "id": "teng",
+  "name": "TENG",
+  "version": "1.0.0"
 }
