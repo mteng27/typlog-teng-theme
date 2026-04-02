@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang or 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.name }}</title>
+  <meta name="description" content="{{ site.description }}">
+  {% if site.favicon %}<link rel="icon" href="{{ site.favicon }}">{% endif %}
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Bungee+Shade&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ static('style.css') }}">
+  
+  <!-- RSS -->
+  {% if site.feed %}<link rel="alternate" type="application/rss+xml" href="{{ site.feed }}">{% endif %}
+</head>
+<body class="home">
+  <header>
+    <a class="title" href="{{ site.url }}">
+      <h1>{{ site.name }}</h1>
+    </a>
+    <nav>
+      <a href="{{ site.url }}">Home</a>
+      {% for nav in site.navs %}
+      <a href="{{ nav.url }}">{{ nav.title }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      {% if site.description %}
+      <blockquote class="hero-quote">
+        "{{ site.description }}"
+        {% if site.author %}<cite>—— {{ site.author }}</cite>{% endif %}
+      </blockquote>
+      {% endif %}
+    </div>
+    
+    {% if latest_posts %}
+    <h2>Latest</h2>
+    <ul class="blog-posts">
+      {% for post in latest_posts %}
+      <li>
+        <time>{{ post.date.strftime('%Y-%m-%d') }}</time>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </main>
+
+  <footer>
+    <p>Crafted with ❤️</p>
+  </footer>
+</body>
+</html>
