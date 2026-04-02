@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang or 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - {{ site.name }}</title>
+  <meta name="description" content="{{ page.summary or site.description }}">
+  {% if site.favicon %}<link rel="icon" href="{{ site.favicon }}">{% endif %}
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Bungee+Shade&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ static('style.css') }}">
+  
+  <!-- Theme Toggle -->
+  <script src="{{ static('theme.js') }}"></script>
+</head>
+<body class="page">
+  <header>
+    <a class="title" href="{{ site.url }}">
+      <h1>{{ site.name }}</h1>
+    </a>
+    <nav>
+      <a href="{{ site.url }}">Home</a>
+      {% for nav in site.navs %}
+      <a href="{{ nav.url }}">{{ nav.title }}</a>
+      {% endfor %}
+      <a href="#" class="theme-toggle" onclick="toggleTheme(event)">☀</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h1 class="page-title">{{ page.title }}</h1>
+      <div class="page-content">
+        {{ page.content }}
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>Crafted with ❤️</p>
+  </footer>
+</body>
+</html>
